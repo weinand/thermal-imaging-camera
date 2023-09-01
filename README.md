@@ -4,7 +4,7 @@ A simple but fast Thermal Imaging Camera using the MLX90640 sensor, a 1.5 inch R
 
 ![breadboard setup showing thermal image of a candle](images/movie.gif)
 
-## Features:
+## Features
 - fast: 23 frames per second by employing both cores of the 2040 (whereas a single core would only result in 11 fps):
   - core0 fetches the pages from the MLX90640 and scales the data down to 8-bit integers
   - core1 renders the data on the OLED after optionally smoothing the data by bilinear interpolation
@@ -12,15 +12,14 @@ A simple but fast Thermal Imaging Camera using the MLX90640 sensor, a 1.5 inch R
 - touch button for disabling interpolation
 - touch button for freezing the displayed image
 
-## Code Based on:
+## Code Based on
 - unmodified Melexis Driver: https://github.com/melexis/mlx90640-library/
 - heat map code inspired by: http://www.andrewnoske.com/wiki/Code_-_heatmaps_and_color_gradients
 - the [Pico SDK](https://www.raspberrypi.com/documentation/microcontrollers/c_sdk.html)
 
-
-## Hardware:
+## Hardware
 - Raspberry Pi Pico (RP2040)
-- MLX90640 Thermal Camera Breakout (55 or 110), e.g. [Pimoroni](https://shop.pimoroni.com/products/mlx90640-thermal-camera-breakout)
+- MLX90640 Thermal Camera Breakout (55º or 110º), e.g. [Pimoroni](https://shop.pimoroni.com/products/mlx90640-thermal-camera-breakout)
 - 1.5inch RGB OLED Display Module, 65K RGB Colors, 128×128, SPI, e.g. [Waveshare](https://www.waveshare.com/1.5inch-rgb-oled-module.htm)
 - Optional: 2 buttons, e.g. [TTP223 Touch Sensor Modules](https://hobbycomponents.com/sensors/901-ttp223-capacitive-touch-sensor)
 - Optional: battery module, e.g. [LiPo Charger/Booster module](https://www.sparkfun.com/products/14411)
