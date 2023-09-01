@@ -29,27 +29,23 @@ A simple but fast Thermal Imaging Camera using the MLX90640 sensor, a 1.5 inch R
 
 ### Wiring
 
-| MLX90640 | GPIO | Pin |
+| MLX90640  | GPIO | Pin |
+| --------- | ---- | --- |
+| I2C0 SDA  | 16   | 21  |
+| I2C0 SDC  | 17   | 22  |
+
+| OLED     | GPIO | Pin |
 | -------- | ---- | --- |
-| I2C SDA  | 16   | 21  |
-| I2C SDC  | 17   | 22  |
+| SPI1 DC  | 9    | 12  |
+| SPI1 SCK | 10   | 14  |
+| SPI1 TX  | 11   | 15  |
+| SPI1 CSn | 13   | 17  |
+| SPI1 RST | 15   | 20  |
 
-```
-MLX90640:
-SDA:  GPIO 16
-SCL:  GPIO 17
-
-OLED:
-DC:   GPIO 9
-SCLK: GPIO 10
-MOSI: GPIO 11
-CS:   GPIO 13
-RST:  GPIO 15
-
-Buttons:
-"Disable Interpolation":  GPIO 14
-"Freeze Image":           GPIO 18
-```
+| Touch Buttons         | GPIO | Pin |
+| --------------------- | ---- | --- |
+| Disable Interpolation | 14   | 19  |
+| Freeze Image          | 18   | 24  |
 
 ## Building
 - make sure the "[Pico SDK](https://www.raspberrypi.com/documentation/microcontrollers/c_sdk.html)" is installed and the environment variable "PICO_SDK_PATH" refers to it.
