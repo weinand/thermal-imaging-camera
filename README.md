@@ -14,8 +14,8 @@ A simple but fast Thermal Imaging Camera using the MLX90640 sensor, a 1.5 inch R
 
 ## Code Based on:
 - unmodified Melexis Driver: https://github.com/melexis/mlx90640-library/
-- the [Pico SDK](https://www.raspberrypi.com/documentation/microcontrollers/c_sdk.html)
 - heat map code inspired by: http://www.andrewnoske.com/wiki/Code_-_heatmaps_and_color_gradients
+- the [Pico SDK](https://www.raspberrypi.com/documentation/microcontrollers/c_sdk.html)
 
 
 ## Hardware:
