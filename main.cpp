@@ -57,7 +57,7 @@ static bool freeze_image = false;
 
 void gpio_callback(uint gpio, uint32_t events) {
     switch (gpio) {
-        case 14:    // touch button flips between bilinear and nearest neighbor interpolation
+        case 14:    // touch button disables bilinear interpolation
             if (events & GPIO_IRQ_EDGE_RISE) {
                 bilinear_interpolation = false;
             }
@@ -76,7 +76,7 @@ void gpio_callback(uint gpio, uint32_t events) {
     }
 }
 
-// measure display frame rate with a timer
+// measure display frame rate with a timer interrupt
 static repeating_timer_t timer;
 static int frame_cnt = 0;
 static int fps = 0;
