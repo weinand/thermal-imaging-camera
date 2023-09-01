@@ -25,8 +25,6 @@ A simple but fast Thermal Imaging Camera using the MLX90640 sensor, a 1.5 inch R
 - Optional: 2 buttons, e.g. [TTP223 Touch Sensor Modules](https://hobbycomponents.com/sensors/901-ttp223-capacitive-touch-sensor)
 - Optional: battery module, e.g. [LiPo Charger/Booster module](https://www.sparkfun.com/products/14411)
 
-![close-up of OLED display showing camera](images/photo_2.jpg)
-
 ### Wiring
 
 | MLX90640  | GPIO | Pin |
@@ -57,3 +55,9 @@ A simple but fast Thermal Imaging Camera using the MLX90640 sensor, a 1.5 inch R
 - `cd build`
 - `cmake ..`
 - `make`
+
+## More Images
+
+![breadboard setup showing thermal image of a candle](images/photo_1.jpg)
+
+![close-up of OLED display showing camera](images/photo_2.jpg)
