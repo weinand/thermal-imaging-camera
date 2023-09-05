@@ -5,7 +5,7 @@ A simple but fast Thermal Imaging Camera using the MLX90640 sensor, a 1.5 inch R
 ![breadboard setup showing thermal image of a candle](images/movie.gif)
 
 ## Features
-- fast: 23 frames per second by employing both cores of the 2040 (whereas a single core would only result in 11 fps):
+- fast: 23 frames per second by employing both cores of the RP2040 (whereas a single core would only result in 11 fps):
   - core0 fetches the pages from the MLX90640 and scales the data down to 8-bit integers
   - core1 renders the data on the OLED after optionally smoothing the data by bilinear interpolation
 - configurable heat-map (predefined 7-colors, 5-colors, 2-colors, and grey map)
@@ -26,18 +26,20 @@ A simple but fast Thermal Imaging Camera using the MLX90640 sensor, a 1.5 inch R
 
 ### Wiring
 
-| MLX90640  | GPIO | Pin |
-| --------- | ---- | --- |
-| I2C0 SDA  | 16   | 21  |
-| I2C0 SDC  | 17   | 22  |
+Connect the MLX90640 and the OLED to the 3.3 V Pin 36 of the Raspberry PI Pico.
 
-| OLED     | GPIO | Pin |
-| -------- | ---- | --- |
-| SPI1 DC  | 9    | 12  |
-| SPI1 SCK | 10   | 14  |
-| SPI1 TX  | 11   | 15  |
-| SPI1 CSn | 13   | 17  |
-| SPI1 RST | 15   | 20  |
+| MLX90640 | RP2040   | GPIO | Pin |
+| -------- | -------- | ---- | --- |
+| SDA      | I2C0 SDA | 16   | 21  |
+| SDC      | I2C0 SDC | 17   | 22  |
+
+| OLED | RP2040   | GPIO | Pin |
+| ---  | -------- | ---- | --- |
+| DC   | SPI1 DC  | 9    | 12  |
+| CLK  | SPI1 SCK | 10   | 14  |
+| DIN  | SPI1 TX  | 11   | 15  |
+| CS   | SPI1 CSn | 13   | 17  |
+| RST  | RST      | 15   | 20  |
 
 | Touch Buttons         | GPIO | Pin |
 | --------------------- | ---- | --- |
