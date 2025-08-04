@@ -24,7 +24,7 @@ extern "C"{
 #include <MLX90640_API.h>
 }
 
-#include "SSD1351_SPI_Driver.h"
+#include "SSD1351_SPI_DRIVER.h"
 #include "SSD1351_API.h"
 
 // ---- configuration ----
