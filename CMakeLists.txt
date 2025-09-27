@@ -1,10 +1,13 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.13)
 
 # initialize the SDK based on PICO_SDK_PATH
 # note: this must happen before project()
 include($ENV{PICO_SDK_PATH}/external/pico_sdk_import.cmake)
 
-project(hello C CXX ASM)
+project(thermocam C CXX ASM)
+
+# initialize the Raspberry Pi Pico SDK
+pico_sdk_init()
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
@@ -29,9 +32,6 @@ target_link_libraries(thermocam
     hardware_gpio
     pico_multicore
 )
-
-# initialize the Raspberry Pi Pico SDK
-pico_sdk_init()
 
 # Enable USB, UART output
 pico_enable_stdio_usb(thermocam 0)
