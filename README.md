@@ -8,6 +8,7 @@ A simple but fast Thermal Imaging Camera using the MLX90640 sensor, a 1.5 inch R
 - fast: 23 frames per second by employing both cores of the RP2040 (whereas a single core would only result in 11 fps):
   - core0 fetches the pages from the MLX90640 and scales the data down to 8-bit integers
   - core1 renders the data on the OLED after optionally smoothing the data by bilinear interpolation
+  - using an RP2350 results in 28 fps 
 - configurable heat-map (predefined 7-colors, 5-colors, 2-colors, and grey map)
 - touch button for disabling interpolation
 - touch button for freezing the displayed image
@@ -18,7 +19,7 @@ A simple but fast Thermal Imaging Camera using the MLX90640 sensor, a 1.5 inch R
 - the [Pico SDK](https://www.raspberrypi.com/documentation/microcontrollers/c_sdk.html)
 
 ## Hardware
-- Raspberry Pi Pico (RP2040)
+- Raspberry Pi Pico (RP2040) or Pico 2 (RP2350)
 - MLX90640 Thermal Camera Breakout (55º or 110º), e.g. [Pimoroni](https://shop.pimoroni.com/products/mlx90640-thermal-camera-breakout)
 - 1.5inch RGB OLED Display Module, 65K RGB Colors, 128×128, SPI, e.g. [Waveshare](https://www.waveshare.com/1.5inch-rgb-oled-module.htm)
 - Optional: 2 buttons, e.g. [TTP223 Touch Sensor Modules](https://hobbycomponents.com/sensors/901-ttp223-capacitive-touch-sensor)
@@ -54,8 +55,14 @@ Connect the MLX90640 and the OLED to the 3.3 V Pin 36 of the Raspberry PI Pico.
 - `git submodule update`
 - `mkdir build`
 - `cd build`
-- `cmake ..`
-- `make`
+- `cmake -DPICO_BOARD=pico ..`
+- `make thermocam`
+
+To build for Pico 2 (with the faster rp2350) delete the build directory and then use these steps:
+- `mkdir build`
+- `cd build`
+- `cmake -DPICO_BOARD=pico2`
+- `make thermocam`
 
 ## More Images
 
